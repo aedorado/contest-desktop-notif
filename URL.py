@@ -21,5 +21,4 @@ class URL:
                     return -1
                 print 'Failure.\nAn HTTP error occured : ' + str(e.code)
                 print 'Refetching : ' + self.url
-            # time.sleep(4)
         return response
