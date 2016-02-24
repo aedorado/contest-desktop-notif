@@ -13,12 +13,12 @@ class URL:
         while not OK:
             try:
                 response = urllib2.urlopen(self.url)
-                print 'Success : ' + self.url
+                print 'Success'
                 OK = True
             except urllib2.HTTPError as e:
                 tries = tries + 1
                 if tries >= 256:
                     return -1
                 print 'Failure.\nAn HTTP error occured : ' + str(e.code)
-                print 'Refetching : ' + self.url
+                print 'Refetching'
         return response
