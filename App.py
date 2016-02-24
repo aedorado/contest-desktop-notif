@@ -54,7 +54,7 @@ class App():
         self.root.destroy()
 
     def bopen(self, event):
-        i = self.clist.curselection()[0] / 4    # set of 4 lines coresspond to a single url
+        i = int(self.clist.curselection()[0]) / 4    # set of 4 lines coresspond to a single url
         webbrowser.open(self.contestlist[i]['url'])
 
 # app = App('hello').root.mainloop()

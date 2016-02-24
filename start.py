@@ -7,6 +7,9 @@ jso = json.loads(response.read())
 ongoing = jso['result']['ongoing']
 upcoming = jso['result']['upcoming']
 
-ongoing.append({'url':'https://github.com/aedorado/contest-desktop-notif', 'Platform':'Github', 'EndTime':'', 'Name':'Contest-Desktop-Notification'})
+ongoing.append({'url':'https://github.com/aedorado/contest-desktop-notif', 'Platform':'Github', 'EndTime':'Wed, 31 Jul 2024 00:00', 'Name':'Contest-Desktop-Notification'})
+
+for event in ongoing:
+	event['EndTime'] = event['EndTime'] + '  ' + getTimeDiff(event['EndTime'])
 
 app = App(ongoing).root.mainloop()
